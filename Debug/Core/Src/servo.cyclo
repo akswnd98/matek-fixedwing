@@ -1,0 +1,9 @@
+../Core/Src/servo.c:14:6:start_servos	1
+../Core/Src/servo.c:21:6:start_servo1	1
+../Core/Src/servo.c:25:6:update_servo1_pwm	1
+../Core/Src/servo.c:29:6:start_servo2	1
+../Core/Src/servo.c:33:6:update_servo2_pwm	1
+../Core/Src/servo.c:37:6:start_servo3	1
+../Core/Src/servo.c:41:6:update_servo3_pwm	1
+../Core/Src/servo.c:45:6:start_servo4	1
+../Core/Src/servo.c:49:6:update_servo4_pwm	1

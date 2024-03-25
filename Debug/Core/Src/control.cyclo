@@ -1,0 +1,8 @@
+../Core/Src/control.c:37:7:get_phi_dot_ref	1
+../Core/Src/control.c:41:7:get_theta_dot_ref	1
+../Core/Src/control.c:45:7:get_phi_dot_dot_ref	1
+../Core/Src/control.c:49:7:get_theta_dot_dot_ref	1
+../Core/Src/control.c:53:7:get_psi_dot_dot_ref	1
+../Core/Src/control.c:57:6:get_w_dot_ref	1
+../Core/Src/control.c:68:5:saturate	1
+../Core/Src/control.c:73:6:update_control_surface_angle	1

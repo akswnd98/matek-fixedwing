@@ -1,0 +1,15 @@
+../Core/Src/kinematics.c:34:6:mul_mat_vec_3d	40	static
+../Core/Src/kinematics.c:45:6:mul_mat_vec_4d	40	static
+../Core/Src/kinematics.c:56:7:dot_vec_3d	24	static
+../Core/Src/kinematics.c:64:7:dot_vec_4d	24	static
+../Core/Src/kinematics.c:72:6:add_vec_3d	32	static
+../Core/Src/kinematics.c:78:6:add_vec_4d	32	static
+../Core/Src/kinematics.c:84:6:sub_vec_3d	32	static
+../Core/Src/kinematics.c:90:6:sub_vec_4d	32	static
+../Core/Src/kinematics.c:96:6:dot_scalar_vec	32	static
+../Core/Src/kinematics.c:102:6:dot_scalar_vec_3d	32	static
+../Core/Src/kinematics.c:108:6:dot_scalar_vec_4d	32	static
+../Core/Src/kinematics.c:114:6:get_C	32	static
+../Core/Src/kinematics.c:128:6:get_C_inv	56	static
+../Core/Src/kinematics.c:142:6:get_C_dot	56	static
+../Core/Src/kinematics.c:158:6:update_euler_state	104	static

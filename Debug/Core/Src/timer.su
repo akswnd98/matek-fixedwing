@@ -1,0 +1,4 @@
+../Core/Src/timer.c:15:6:start_euler_state_update_tim	8	static
+../Core/Src/timer.c:19:6:start_control_surface_angle_update_tim	8	static
+../Core/Src/timer.c:23:6:start_debug_tim	8	static
+../Core/Src/timer.c:30:6:HAL_TIM_PeriodElapsedCallback	16	static
