@@ -37,7 +37,8 @@ Core/Src/tuning_receive.o: ../Core/Src/tuning_receive.c \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_gpio.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_dma.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_exti.h \
- ../Core/Inc/tuning_receive.h ../Core/Inc/main.h ../Core/Inc/math_utils.h
+ ../Core/Inc/tuning_receive.h ../Core/Inc/main.h ../Core/Inc/math_utils.h \
+ ../Core/Inc/control.h
 ../Core/Inc/main.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 ../Core/Inc/stm32f4xx_hal_conf.h:
@@ -80,3 +81,4 @@ Core/Src/tuning_receive.o: ../Core/Src/tuning_receive.c \
 ../Core/Inc/tuning_receive.h:
 ../Core/Inc/main.h:
 ../Core/Inc/math_utils.h:
+../Core/Inc/control.h:

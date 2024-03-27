@@ -65,4 +65,3 @@ void process_control_receive (uint8_t data) {
     control_payload_cnt = 0;
   }
 }
-

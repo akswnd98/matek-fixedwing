@@ -79,6 +79,16 @@ extern float phi_dot;
 extern float theta_dot;
 extern float psi_dot;
 extern float command[4];
+extern float w_dot_ref[3];
+extern int servo1_offset;
+extern int servo2_offset;
+extern int servo3_offset;
+extern int servo4_offset;
+
+extern float phi_error_P_gain;
+extern float w_x_FF_gain;
+extern float w_x_error_P_gain;
+extern float w_x_error_I_gain;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -169,9 +179,13 @@ int main(void)
 			control_surface_angle_update_it = 0;
 		}
 		if (debug_it) {
-			float w_dot_ref[3];
-			get_w_dot_ref(w_dot_ref);
-			printf("%d\r\n", saturate((int)w_dot_ref[0] + 1500, 1000, 2000));
+			/* printf(
+				"%f %f %f %f\r\n",
+				phi_error_P_gain,
+				w_x_FF_gain,
+				w_x_error_P_gain,
+				w_x_error_I_gain
+			); */
 			debug_it = 0;
 		}
     /* USER CODE END WHILE */

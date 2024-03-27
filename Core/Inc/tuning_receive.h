@@ -10,31 +10,40 @@
 
 #include "main.h"
 
-#define NUM_OF_TUNINGS 14
+#define NUM_OF_TUNINGS 15
 
 #define PHI_ERROR_P_IDX 0
-#define PHI_DOT_FF_IDX 1
-#define PHI_DOT_ERROR_P_IDX 2
-#define PHI_DOT_ERROR_I_IDX 3
+#define W_X_FF_IDX 1
+#define W_X_ERROR_P_IDX 2
+#define W_X_ERROR_I_IDX 3
+
 #define THETA_ERROR_P_IDX 4
-#define THETA_DOT_FF_IDX 5
-#define THETA_DOT_ERROR_P_IDX 6
-#define THETA_DOT_ERROR_I_IDX 7
-#define PSI_DOT_ERROR_P_IDX 8
-#define SERVO1_OFFSET 10
-#define SERVO2_OFFSET 11
-#define SERVO3_OFFSET 12
-#define SERVO4_OFFSET 13
+#define W_Y_FF_IDX 5
+#define W_Y_ERROR_P_IDX 6
+#define W_Y_ERROR_I_IDX 7
+
+#define W_Z_FF_IDX 8
+#define W_Z_ERROR_P_IDX 9
+#define W_Z_ERROR_I_IDX 10
+
+#define SERVO1_OFFSET 11
+#define SERVO2_OFFSET 12
+#define SERVO3_OFFSET 13
+#define SERVO4_OFFSET 14
 
 #define PHI_ERROR_P_GAIN_FS 100.0
-#define PHI_DOT_FF_GAIN_FS 500.0
-#define PHI_DOT_ERROR_P_GAIN_FS 200.0
-#define PHI_DOT_ERROR_I_GAIN_FS 100.0
+#define W_X_FF_GAIN_FS 500.0
+#define W_X_ERROR_P_GAIN_FS 200.0
+#define W_X_ERROR_I_GAIN_FS 100.0
+
 #define THETA_ERROR_P_GAIN_FS 100.0
-#define THETA_DOT_FF_GAIN_FS 500.0
-#define THETA_DOT_ERROR_P_GAIN_FS 200.0
-#define THETA_DOT_ERROR_I_GAIN_FS 100.0
-#define PSI_DOT_ERROR_P_GAIN_FS 100.0
+#define W_Y_FF_GAIN_FS 500.0
+#define W_Y_ERROR_P_GAIN_FS 200.0
+#define W_Y_ERROR_I_GAIN_FS 100.0
+
+#define W_Z_FF_GAIN_FS 500.0
+#define W_Z_ERROR_P_GAIN_FS 200.0
+#define W_Z_ERROR_I_GAIN_FS 100.0
 
 extern uint16_t tuning[20];
 

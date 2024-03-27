@@ -10,16 +10,21 @@
 #include "tuning_receive.h"
 #include "math.h"
 #include "math_utils.h"
+#include "control.h"
 
 extern float phi_error_P_gain;
-extern float phi_dot_FF_gain;
-extern float phi_dot_error_P_gain;
-extern float phi_dot_error_I_gain;
+extern float w_x_FF_gain;
+extern float w_x_error_P_gain;
+extern float w_x_error_I_gain;
+
 extern float theta_error_P_gain;
-extern float theta_dot_FF_gain;
-extern float theta_dot_error_P_gain;
-extern float theta_dot_error_I_gain;
-extern float psi_dot_error_P_gain;
+extern float w_y_FF_gain;
+extern float w_y_error_P_gain;
+extern float w_y_error_I_gain;
+
+extern float w_z_FF_gain;
+extern float w_z_error_P_gain;
+extern float w_z_error_I_gain;
 
 extern int servo1_offset;
 extern int servo2_offset;
@@ -57,21 +62,23 @@ void process_tuning_receive (uint8_t data) {
         tuning[i] = *(uint16_t *)(tuning_rx_buf + j) & 0xfff;
       }
       phi_error_P_gain = min_f(PHI_ERROR_P_GAIN_FS, (float)tuning[PHI_ERROR_P_IDX] / 2000.0 * PHI_ERROR_P_GAIN_FS);
-      phi_dot_FF_gain = min_f(PHI_DOT_FF_GAIN_FS, (float)tuning[PHI_DOT_FF_IDX] / 2000.0 * PHI_DOT_FF_GAIN_FS);
-      phi_dot_error_P_gain = min_f(PHI_DOT_ERROR_P_GAIN_FS, (float)tuning[PHI_DOT_ERROR_P_IDX] / 2000.0 * PHI_DOT_ERROR_P_GAIN_FS);
-      phi_dot_error_I_gain = min_f(PHI_DOT_ERROR_I_GAIN_FS, (float)tuning[PHI_DOT_ERROR_I_IDX] / 2000.0 * PHI_DOT_ERROR_I_GAIN_FS);
+      w_x_FF_gain = min_f(W_X_FF_GAIN_FS, (float)tuning[W_X_FF_IDX] / 2000.0 * W_X_FF_GAIN_FS);
+      w_x_error_P_gain = min_f(W_X_ERROR_P_GAIN_FS, (float)tuning[W_X_ERROR_P_IDX] / 2000.0 * W_X_ERROR_P_GAIN_FS);
+      w_x_error_I_gain = min_f(W_X_ERROR_I_GAIN_FS, (float)tuning[W_X_ERROR_I_IDX] / 2000.0 * W_X_ERROR_I_GAIN_FS);
 
       theta_error_P_gain = min_f(THETA_ERROR_P_GAIN_FS, (float)tuning[THETA_ERROR_P_IDX] / 2000.0 * THETA_ERROR_P_GAIN_FS);
-      theta_dot_FF_gain = min_f(THETA_DOT_FF_GAIN_FS, (float)tuning[THETA_DOT_FF_IDX] / 2000.0 * THETA_DOT_FF_GAIN_FS);
-      theta_dot_error_P_gain = min_f(THETA_DOT_ERROR_P_GAIN_FS, (float)tuning[THETA_DOT_ERROR_P_IDX] / 2000.0 * THETA_DOT_ERROR_P_GAIN_FS);
-      theta_dot_error_I_gain = min_f(THETA_DOT_ERROR_I_GAIN_FS, (float)tuning[THETA_DOT_ERROR_I_IDX] / 2000.0 * THETA_DOT_ERROR_I_GAIN_FS);
+      w_y_FF_gain = min_f(W_Y_FF_GAIN_FS, (float)tuning[W_Y_FF_IDX] / 2000.0 * W_Y_FF_GAIN_FS);
+      w_y_error_P_gain = min_f(W_Y_ERROR_P_GAIN_FS, (float)tuning[W_Y_ERROR_P_IDX] / 2000.0 * W_Y_ERROR_P_GAIN_FS);
+      w_y_error_I_gain = min_f(W_Y_ERROR_I_GAIN_FS, (float)tuning[W_Y_ERROR_I_IDX] / 2000.0 * W_Y_ERROR_I_GAIN_FS);
 
-      psi_dot_error_P_gain = min_f(PSI_DOT_ERROR_P_GAIN_FS, (float)tuning[PSI_DOT_ERROR_P_IDX] / 2000.0 * PSI_DOT_ERROR_P_GAIN_FS);
+      w_z_FF_gain = min_f(W_Z_FF_GAIN_FS, (float)tuning[W_Z_FF_IDX] / 2000.0 * W_Z_FF_GAIN_FS);
+      w_z_error_P_gain = min_f(W_Z_ERROR_P_GAIN_FS, (float)tuning[W_Z_ERROR_P_IDX] / 2000.0 * W_Z_ERROR_P_GAIN_FS);
+      w_z_error_I_gain = min_f(W_Z_ERROR_I_GAIN_FS, (float)tuning[W_Z_ERROR_I_IDX] / 2000.0 * W_Z_ERROR_I_GAIN_FS);
 
-      servo1_offset = tuning[SERVO1_OFFSET];
-      servo2_offset = tuning[SERVO2_OFFSET];
-      servo3_offset = tuning[SERVO3_OFFSET];
-      servo4_offset = tuning[SERVO4_OFFSET];
+      servo1_offset = saturate((int)tuning[SERVO1_OFFSET] - 100, -100, 100);
+      servo2_offset = saturate((int)tuning[SERVO2_OFFSET] - 100, -100, 100);
+      servo3_offset = saturate((int)tuning[SERVO3_OFFSET] - 100, -100, 100);
+      servo4_offset = saturate((int)tuning[SERVO4_OFFSET] - 100, -100, 100);
     }
     tuning_payload_cnt = 0;
   } else {

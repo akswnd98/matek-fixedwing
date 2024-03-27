@@ -2,3 +2,14 @@
 ../Core/Src/math_utils.c:14:5:min	16	static
 ../Core/Src/math_utils.c:18:7:max_f	16	static
 ../Core/Src/math_utils.c:22:7:min_f	16	static
+../Core/Src/math_utils.c:26:6:mul_mat_vec_3d	40	static
+../Core/Src/math_utils.c:37:6:mul_mat_vec_4d	40	static
+../Core/Src/math_utils.c:48:7:dot_vec_3d	24	static
+../Core/Src/math_utils.c:56:7:dot_vec_4d	24	static
+../Core/Src/math_utils.c:64:6:add_vec_3d	32	static
+../Core/Src/math_utils.c:70:6:add_vec_4d	32	static
+../Core/Src/math_utils.c:76:6:sub_vec_3d	32	static
+../Core/Src/math_utils.c:82:6:sub_vec_4d	32	static
+../Core/Src/math_utils.c:88:6:dot_scalar_vec	32	static
+../Core/Src/math_utils.c:94:6:dot_scalar_vec_3d	32	static
+../Core/Src/math_utils.c:100:6:dot_scalar_vec_4d	32	static

@@ -14,10 +14,9 @@
 
 float get_phi_dot_ref ();
 float get_theta_dot_ref ();
-float get_phi_dot_dot_ref (float phi_dot_ref);
-float get_theta_dot_dot_ref (float theta_dot_ref);
-float get_psi_dot_dot_ref ();
-void get_w_dot_ref (float w_dot_ref[3]);
+float get_psi_dot_ref ();
+void get_w_ref (float w_ref[3]);
+void get_w_dot_ref (float w_ref[3], float w_dot_ref[3]);
 int saturate (int val, int bottom, int top);
 void update_control_surface_angle ();
 

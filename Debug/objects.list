@@ -1,7 +1,6 @@
 "./Core/Src/control.o"
 "./Core/Src/control_receive.o"
 "./Core/Src/define_printf.o"
-"./Core/Src/dynamics.o"
 "./Core/Src/esc.o"
 "./Core/Src/imu.o"
 "./Core/Src/kinematics.o"
