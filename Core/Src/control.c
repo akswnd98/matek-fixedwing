@@ -12,7 +12,7 @@
 #include <stdio.h>
 #include "math.h"
 
-float cruise_speed = 20;
+float cruise_speed = 20.0;
 extern float g;
 
 extern float phi_ref;
@@ -20,26 +20,26 @@ extern float phi;
 extern float theta_ref;
 extern float theta;
 
-float phi_error_P_gain = 1;
-float w_x_FF_gain = 100;
-float w_x_error_P_gain = 0;
-float w_x_error_I_gain = 0;
+float phi_error_P_gain = 1.0;
+float w_x_FF_gain = 100.0;
+float w_x_error_P_gain = 0.0;
+float w_x_error_I_gain = 0.0;
 
-float theta_error_P_gain = 1;
-float w_y_FF_gain = 100;
-float w_y_error_P_gain = 0;
-float w_y_error_I_gain = 0;
+float theta_error_P_gain = 1.0;
+float w_y_FF_gain = 100.0;
+float w_y_error_P_gain = 0.0;
+float w_y_error_I_gain = 0.0;
 
-float w_z_FF_gain = 100;
-float w_z_error_P_gain = 0;
-float w_z_error_I_gain = 0;
+float w_z_FF_gain = 100.0;
+float w_z_error_P_gain = 0.0;
+float w_z_error_I_gain = 0.0;
 
 extern float gyro_x;
 extern float gyro_y;
 extern float gyro_z;
 
-float w_ref[3] = {0, 0, 0};
-float w_dot_ref[3] = {0, 0, 0};
+float w_ref[3] = {0.0, 0.0, 0.0};
+float w_dot_ref[3] = {0.0, 0.0, 0.0};
 
 int servo1_offset = 0;
 int servo2_offset = 0;
@@ -55,7 +55,7 @@ float get_theta_dot_ref () {
 }
 
 float get_psi_dot_ref () {
-	return g / cruise_speed * tan(phi_ref) * cos(theta_ref);
+	return g / (cruise_speed + 0.00001) * tan(phi_ref) * cos(theta_ref);
 }
 
 void get_w_ref (float w_ref[3]) {

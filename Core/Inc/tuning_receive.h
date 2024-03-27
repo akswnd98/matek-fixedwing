@@ -10,7 +10,7 @@
 
 #include "main.h"
 
-#define NUM_OF_TUNINGS 15
+#define NUM_OF_TUNINGS 16
 
 #define PHI_ERROR_P_IDX 0
 #define W_X_FF_IDX 1
@@ -26,10 +26,12 @@
 #define W_Z_ERROR_P_IDX 9
 #define W_Z_ERROR_I_IDX 10
 
-#define SERVO1_OFFSET 11
-#define SERVO2_OFFSET 12
-#define SERVO3_OFFSET 13
-#define SERVO4_OFFSET 14
+#define SERVO1_OFFSET_IDX 11
+#define SERVO2_OFFSET_IDX 12
+#define SERVO3_OFFSET_IDX 13
+#define SERVO4_OFFSET_IDX 14
+
+#define CRUISE_SPEED_IDX 15
 
 #define PHI_ERROR_P_GAIN_FS 100.0
 #define W_X_FF_GAIN_FS 500.0
@@ -44,6 +46,8 @@
 #define W_Z_FF_GAIN_FS 500.0
 #define W_Z_ERROR_P_GAIN_FS 200.0
 #define W_Z_ERROR_I_GAIN_FS 100.0
+
+#define CRUISE_SPEED_FS 50
 
 extern uint16_t tuning[20];
 

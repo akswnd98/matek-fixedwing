@@ -179,13 +179,13 @@ int main(void)
 			control_surface_angle_update_it = 0;
 		}
 		if (debug_it) {
-			/* printf(
+			printf(
 				"%f %f %f %f\r\n",
 				phi_error_P_gain,
 				w_x_FF_gain,
 				w_x_error_P_gain,
 				w_x_error_I_gain
-			); */
+			);
 			debug_it = 0;
 		}
     /* USER CODE END WHILE */

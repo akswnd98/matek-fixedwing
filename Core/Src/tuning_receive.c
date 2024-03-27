@@ -31,6 +31,8 @@ extern int servo2_offset;
 extern int servo3_offset;
 extern int servo4_offset;
 
+extern float cruise_speed;
+
 uint8_t tuning_rx_buf[100];
 int tuning_payload_cnt = 0;
 uint16_t tuning[20] = {0, };
@@ -75,10 +77,12 @@ void process_tuning_receive (uint8_t data) {
       w_z_error_P_gain = min_f(W_Z_ERROR_P_GAIN_FS, (float)tuning[W_Z_ERROR_P_IDX] / 2000.0 * W_Z_ERROR_P_GAIN_FS);
       w_z_error_I_gain = min_f(W_Z_ERROR_I_GAIN_FS, (float)tuning[W_Z_ERROR_I_IDX] / 2000.0 * W_Z_ERROR_I_GAIN_FS);
 
-      servo1_offset = saturate((int)tuning[SERVO1_OFFSET] - 100, -100, 100);
-      servo2_offset = saturate((int)tuning[SERVO2_OFFSET] - 100, -100, 100);
-      servo3_offset = saturate((int)tuning[SERVO3_OFFSET] - 100, -100, 100);
-      servo4_offset = saturate((int)tuning[SERVO4_OFFSET] - 100, -100, 100);
+      servo1_offset = saturate((int)tuning[SERVO1_OFFSET_IDX] - 100, -100, 100);
+      servo2_offset = saturate((int)tuning[SERVO2_OFFSET_IDX] - 100, -100, 100);
+      servo3_offset = saturate((int)tuning[SERVO3_OFFSET_IDX] - 100, -100, 100);
+      servo4_offset = saturate((int)tuning[SERVO4_OFFSET_IDX] - 100, -100, 100);
+
+      cruise_speed = min_f(CRUISE_SPEED_FS, ((float)tuning[CRUISE_SPEED_IDX]) / 2000.0 * CRUISE_SPEED_FS);
     }
     tuning_payload_cnt = 0;
   } else {
